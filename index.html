@@ -26,9 +26,9 @@
                 View-guided Hierarchical VLA for Precise Tube PnP Task
             </h1>
             <div class="text-lg md:text-xl mb-8 opacity-90 space-y-2">
-                <p>Chenyuan Zhou</p>
+                <p><a href="https://huagailuowen.github.io/" target="_blank" rel="noopener noreferrer" class="hover:underline">Chenyuan Zhou</a></p>
                 <p>Zhiheng Dai</p>
-                <p>Yumin Zhuang</p>
+                <p><a href="https://zhuangyumin.dev" target="_blank" rel="noopener noreferrer" class="hover:underline">Yumin Zhuang</a></p>
                 <p class="text-sm mt-4 opacity-75">Shanghai Jiao Tong University</p>
             </div>
             <div class="max-w-4xl mx-auto bg-white/10 backdrop-blur-sm rounded-lg p-6 mt-8">
@@ -66,138 +66,252 @@
 
     <!-- Results Section -->
     <section class="py-16 px-4 bg-gray-50">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
                 Experimental Results
             </h2>
-            
-            <!-- Results Table -->
+
+            <!-- Table 1: Success Rates -->
             <div class="bg-white rounded-xl p-8 card-shadow mb-12">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-700">Success Rate Comparison</h3>
+                <h3 class="text-2xl font-semibold mb-4 text-gray-700">Table 1. Success Rates (%) Under Different Test Configurations</h3>
+                <p class="text-sm text-gray-500 mb-6">The first number denotes pick success, and the second denotes place success. The best results among different configurations are highlighted in bold.</p>
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left">
+                    <table class="w-full text-left text-sm">
                         <thead>
                             <tr class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-                                <th class="px-6 py-4 rounded-tl-lg">Method</th>
-                                <th class="px-6 py-4">Success Rate (%)</th>
-                                <th class="px-6 py-4">Average Time (s)</th>
-                                <th class="px-6 py-4 rounded-tr-lg">Precision</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center" colspan="2">Model</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center" colspan="2">Position of Left Arm</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center" colspan="5">Task</th>
+                            </tr>
+                            <tr class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Baseline</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Ours</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Middle</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Left</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">CT</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">OT</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">ECT</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">EOT</th>
+                                <th class="px-4 py-3">RCT</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200">
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 font-medium">Baseline VLA</td>
-                                <td class="px-6 py-4">65.3</td>
-                                <td class="px-6 py-4">12.4</td>
-                                <td class="px-6 py-4">0.72</td>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">68.8/37.5</td>
+                                <td class="px-4 py-3 text-center">41.7/12.5</td>
+                                <td class="px-4 py-3 text-center">56.3/50.0</td>
+                                <td class="px-4 py-3 text-center">29.2/16.7</td>
+                                <td class="px-4 py-3 text-center">43.8/31.2</td>
                             </tr>
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4 font-medium">Standard Hierarchical VLA</td>
-                                <td class="px-6 py-4">78.6</td>
-                                <td class="px-6 py-4">10.8</td>
-                                <td class="px-6 py-4">0.81</td>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">75.0/37.5</td>
+                                <td class="px-4 py-3 text-center">50.0/15.6</td>
+                                <td class="px-4 py-3 text-center">68.8/56.3</td>
+                                <td class="px-4 py-3 text-center">33.3/20.8</td>
+                                <td class="px-4 py-3 text-center">68.8/56.3</td>
                             </tr>
-                            <tr class="bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100 transition-colors">
-                                <td class="px-6 py-4 font-bold text-purple-700">Ours (View-guided)</td>
-                                <td class="px-6 py-4 font-bold text-purple-700">92.4</td>
-                                <td class="px-6 py-4 font-bold text-purple-700">8.2</td>
-                                <td class="px-6 py-4 font-bold text-purple-700">0.94</td>
+                            <tr class="bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100">
+                                <td class="px-4 py-3 text-center font-bold text-purple-700"></td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">✓</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">✓</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700"></td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">93.8/87.5</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">62.5/45.8</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">81.3/62.5</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">58.3/45.8</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">87.5/87.5</td>
+                            </tr>
+                            <tr class="bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100">
+                                <td class="px-4 py-3 text-center font-bold text-purple-700"></td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">✓</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700"></td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">✓</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">93.8/93.8</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">66.7/54.2</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">87.5/75.0</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">58.3/41.7</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">93.8/87.5</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="text-sm text-gray-500 mt-4 italic">
-                    * Results averaged over 100 trials with semi-transparent test tubes
-                </p>
             </div>
 
-            <!-- Statistical Charts -->
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Success Rate Chart -->
-                <div class="bg-white rounded-xl p-8 card-shadow">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-700">Success Rate by Method</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-600">Baseline VLA</span>
-                                <span class="text-sm font-medium text-gray-600">65.3%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-gray-500 h-4 rounded-full" style="width: 65.3%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-600">Standard Hierarchical VLA</span>
-                                <span class="text-sm font-medium text-gray-600">78.6%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-blue-500 h-4 rounded-full" style="width: 78.6%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-bold text-purple-700">Ours (View-guided)</span>
-                                <span class="text-sm font-bold text-purple-700">92.4%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 h-4 rounded-full" style="width: 92.4%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Performance Metrics Chart -->
-                <div class="bg-white rounded-xl p-8 card-shadow">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-700">Performance Metrics</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-600">Precision</span>
-                                <span class="text-sm font-medium text-gray-600">94%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 h-4 rounded-full" style="width: 94%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-600">Recall</span>
-                                <span class="text-sm font-medium text-gray-600">91%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 h-4 rounded-full" style="width: 91%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-sm font-medium text-gray-600">F1 Score</span>
-                                <span class="text-sm font-medium text-gray-600">92.5%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-gradient-to-r from-purple-600 to-indigo-600 h-4 rounded-full" style="width: 92.5%"></div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Table 2: Ablation Study -->
+            <div class="bg-white rounded-xl p-8 card-shadow mb-12">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-700">Table 2. Ablation Study</h3>
+                <p class="text-sm text-gray-500 mb-6">Results that are worse than the baseline are underlined.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                <th class="px-4 py-3 border-r border-purple-500 text-center" colspan="3">YOLO Experts Enabled</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center" colspan="2">Position of Left Arm</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center" colspan="5">Task</th>
+                            </tr>
+                            <tr class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Expert 1</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Expert 2</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Expert 3</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Middle</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">Left</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">CT</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">OT</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">ECT</th>
+                                <th class="px-4 py-3 border-r border-purple-500 text-center">EOT</th>
+                                <th class="px-4 py-3">RCT</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-purple-50 font-semibold">
+                                <td class="px-4 py-3" colspan="10">Ours</td>
+                            </tr>
+                            <tr class="bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100">
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">93.8/87.5</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">62.5/45.8</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">81.3/62.5</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">58.3/45.8</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">87.5/87.5</td>
+                            </tr>
+                            <tr class="bg-gradient-to-r from-purple-50 to-indigo-50 hover:from-purple-100 hover:to-indigo-100">
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">93.8/93.8</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">66.7/54.2</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">87.5/75.0</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">58.3/41.7</td>
+                                <td class="px-4 py-3 text-center font-bold text-purple-700">93.8/87.5</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 font-semibold" colspan="10">Ablations</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">62.5/43.8</td>
+                                <td class="px-4 py-3 text-center">54.1/12.5</td>
+                                <td class="px-4 py-3 text-center">50.0/37.5</td>
+                                <td class="px-4 py-3 text-center">25.0/12.5</td>
+                                <td class="px-4 py-3 text-center">62.5/37.5</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">75.0/43.8</td>
+                                <td class="px-4 py-3 text-center">50.0/15.6</td>
+                                <td class="px-4 py-3 text-center">68.8/43.8</td>
+                                <td class="px-4 py-3 text-center">41.7/25.0</td>
+                                <td class="px-4 py-3 text-center">56.3/43.8</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center underline">56.3/56.3</td>
+                                <td class="px-4 py-3 text-center">21.9/16.7</td>
+                                <td class="px-4 py-3 text-center">50.0/43.8</td>
+                                <td class="px-4 py-3 text-center underline">8.3/8.3</td>
+                                <td class="px-4 py-3 text-center">43.8/37.5</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">81.3/50.0</td>
+                                <td class="px-4 py-3 text-center">54.1/25.0</td>
+                                <td class="px-4 py-3 text-center">56.3/37.5</td>
+                                <td class="px-4 py-3 text-center">33.3/25.0</td>
+                                <td class="px-4 py-3 text-center">81.3/56.3</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">75.0/56.3</td>
+                                <td class="px-4 py-3 text-center">62.5/29.1</td>
+                                <td class="px-4 py-3 text-center">68.8/37.5</td>
+                                <td class="px-4 py-3 text-center">41.7/33.3</td>
+                                <td class="px-4 py-3 text-center">81.3/56.3</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center"></td>
+                                <td class="px-4 py-3 text-center">✓</td>
+                                <td class="px-4 py-3 text-center">62.5/56.3</td>
+                                <td class="px-4 py-3 text-center">29.1/25.0</td>
+                                <td class="px-4 py-3 text-center">50.0/50.0</td>
+                                <td class="px-4 py-3 text-center">12.5/8.3</td>
+                                <td class="px-4 py-3 text-center">62.5/62.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
-            <!-- Additional Statistics -->
-            <div class="bg-white rounded-xl p-8 card-shadow mt-8">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-700">Key Improvements</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg">
-                        <div class="text-4xl font-bold text-purple-600 mb-2">+27.1%</div>
-                        <div class="text-sm text-gray-600">Success Rate Improvement</div>
-                    </div>
-                    <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg">
-                        <div class="text-4xl font-bold text-purple-600 mb-2">-33.9%</div>
-                        <div class="text-sm text-gray-600">Time Reduction</div>
-                    </div>
-                    <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-lg">
-                        <div class="text-4xl font-bold text-purple-600 mb-2">+22%</div>
-                        <div class="text-sm text-gray-600">Precision Gain</div>
-                    </div>
+            <!-- Task Descriptions -->
+            <div class="bg-white rounded-xl p-8 card-shadow">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-700">Task Descriptions</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+                                <th class="px-6 py-4 rounded-tl-lg">Task</th>
+                                <th class="px-6 py-4 rounded-tr-lg">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium">Central Test (CT)</td>
+                                <td class="px-6 py-4">Test tube is initially placed in central region.</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium">Out-of-bound Test (OT)</td>
+                                <td class="px-6 py-4">Test tube is initially placed in out-of-bound region.</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium">Elevated Central Test (ECT)</td>
+                                <td class="px-6 py-4">Test tube is initially placed in central region after elevating the rack by 2 cm.</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium">Elevated Out-of-bound Test (EOT)</td>
+                                <td class="px-6 py-4">Test tube is initially placed in out-of-bound region after elevating the rack by 2 cm.</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-medium">Rotated Central Test (RCT)</td>
+                                <td class="px-6 py-4">We perform 16 tests. In the i-th test, the right rack is rotated clockwise around its center by an angle α<sub>i</sub>, where -20° ≤ α<sub>i</sub> ≤ 20°, and the test tube is initially placed in position P<sub>i</sub>. The set {P<sub>i</sub>, α<sub>i</sub>}<sub>i=1</sub><sup>16</sup> is fixed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
