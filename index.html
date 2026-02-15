@@ -52,15 +52,11 @@
                 Demo Video
             </h2>
             <div class="bg-gray-900 rounded-xl overflow-hidden card-shadow">
-                <div class="aspect-video flex items-center justify-center bg-gray-800">
-                    <div class="text-center text-white p-8">
-                        <svg class="w-24 h-24 mx-auto mb-4 opacity-50" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                        <p class="text-lg font-medium mb-2">Demo Video Placeholder</p>
-                        <p class="text-sm opacity-75">10-20 second demonstration video will be displayed here</p>
-                        <p class="text-xs opacity-50 mt-4">Replace this div with your actual video element</p>
-                    </div>
+                <div class="aspect-video">
+                    <video class="w-full h-full" controls>
+                        <source src="video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
             <p class="text-center text-gray-600 mt-6 text-sm">
