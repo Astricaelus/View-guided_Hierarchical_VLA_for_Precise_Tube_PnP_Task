@@ -45,6 +45,29 @@
         </div>
     </header>
 
+    <!-- Pipeline Images Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                Pipeline Overview
+            </h2>
+            <div class="space-y-12">
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Inference Pipeline</h3>
+                    <div class="flex justify-center">
+                        <img src="Inference Pipeline.png" alt="Inference Pipeline" class="max-w-full h-auto rounded-lg">
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Training Pipeline of VLA Backbone</h3>
+                    <div class="flex justify-center">
+                        <img src="Training Pipeline of VLA Backbone.png" alt="Training Pipeline of VLA Backbone" class="max-w-full h-auto rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Demo Video Section -->
     <section class="py-16 px-4 bg-white">
         <div class="max-w-5xl mx-auto">
@@ -326,6 +349,14 @@
             </h2>
             
             <div class="space-y-8">
+                <!-- Pipeline of YOLO Training -->
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-700">Pipeline of YOLO Training</h3>
+                    <div class="flex justify-center">
+                        <img src="Pipeline of YOLO Training.png" alt="Pipeline of YOLO Training" class="max-w-full h-auto rounded-lg">
+                    </div>
+                </div>
+
                 <!-- Overview -->
                 <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-8">
                     <h3 class="text-2xl font-semibold mb-4 text-gray-700">Semi-Supervised Annotation Pipeline</h3>
@@ -334,47 +365,7 @@
                     </p>
                 </div>
 
-                <!-- Pipeline Steps -->
-                <div class="bg-white rounded-xl p-8 card-shadow">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-700">Annotation Pipeline Steps</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">Stage Definition</h4>
-                                <p class="text-gray-600 text-sm">Divide the test tube PnP task into three stages: locating, grasping, and placing</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">2</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">Prompt Generation</h4>
-                                <p class="text-gray-600 text-sm">Use Gemini 3 Pro to generate attention regions, viewpoints, and system prompts for each stage</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">3</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">Data Sampling</h4>
-                                <p class="text-gray-600 text-sm">Randomly sample 20 data sequences from the training dataset</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">4</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">SAM3 Annotation</h4>
-                                <p class="text-gray-600 text-sm">Use modified SAM3 annotation tool with manually provided point prompts to annotate videos</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold">5</div>
-                            <div>
-                                <h4 class="font-semibold text-gray-800 mb-1">Frame Sampling</h4>
-                                <p class="text-gray-600 text-sm">Sample one frame every 10 frames from annotated videos for YOLO training</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Dataset Statistics -->
                 <div class="bg-white rounded-xl p-8 card-shadow">
@@ -399,28 +390,7 @@
                     </div>
                 </div>
 
-                <!-- Technical Details -->
-                <div class="bg-white rounded-xl p-8 card-shadow">
-                    <h3 class="text-xl font-semibold mb-6 text-gray-700">Technical Implementation</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <span class="text-purple-600 font-semibold">•</span>
-                            <p class="text-gray-600"><strong>Gemini 3 Pro Integration:</strong> Assists in generating attention regions for each stage, along with corresponding viewpoints and system prompts</p>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <span class="text-purple-600 font-semibold">•</span>
-                            <p class="text-gray-600"><strong>Modified SAM3 Tool:</strong> An open-source SAM3 annotation tool was modified to support semi-supervised video annotation functionality</p>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <span class="text-purple-600 font-semibold">•</span>
-                            <p class="text-gray-600"><strong>Efficient Annotation:</strong> When assisted with manually provided point prompts, SAM3 can complete annotation for an entire video within only 1-3 annotated frames</p>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <span class="text-purple-600 font-semibold">•</span>
-                            <p class="text-gray-600"><strong>Expert Specialization:</strong> Three YOLO experts trained for different task stages: locating (test tube upper rim and left wrist), grasping (robotic gripper and right wrist), and placing (test tube bottom end and left wrist)</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
